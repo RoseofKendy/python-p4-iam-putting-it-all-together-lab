@@ -91,6 +91,10 @@ class TestUser:
             db.session.commit()
 
             user = User(username="Prabhdip")
+            user.password_hash = "test"
+
+            db.session.add(user)
+            db.session.commit()
 
             recipe_1 = Recipe(
                 title="Delicious Shed Ham",
